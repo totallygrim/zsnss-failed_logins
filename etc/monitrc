@@ -9,6 +9,7 @@ set idfile /var/.monit.id	# unique id for monit instance
 set statefile /var/.monit.state	# saves monitoring state on each cycle
 
 check file nossh with path /var/log/auth.log
+  ignore content eq "error: maximum authentication attempts exceeded for invalid user"
   if content eq "error: maximum authentication attempts exceeded for "
   then exec "/usr/local/bin/nossh.sh"
 
