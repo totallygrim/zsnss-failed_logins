@@ -1,7 +1,9 @@
 ## README.md
-# 20230723-1150 JGRIM
+20230723-1150 JGRIM
 
-Create a new group to place blocked accounts in. SSHd will block users in this group.
+Add automatic account lockout to the Zscaler NSS's operating system.
+
+Start by creating a new group to place blocked accounts in. SSHd will block users in this group.
 
 > pw groupadd _nossh
 
