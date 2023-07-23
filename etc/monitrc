@@ -1,0 +1,14 @@
+## monitrc 
+## 20230723-1134 JGRIM
+
+set daemon  5		# check services at 5 seconds intervals
+set log syslog		# send logs to syslog
+
+set pidfile /var/run/monit.pid	# location of lock file
+set idfile /var/.monit.id	# unique id for monit instance
+set statefile /var/.monit.state	# saves monitoring state on each cycle
+
+check file nossh with path /var/log/auth.log
+  if content eq "error: maximum authentication attempts exceeded for "
+  then exec "/usr/local/bin/nossh.sh"
+

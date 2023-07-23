@@ -1,0 +1,4 @@
+## sshd_config.nossh -- Append this command to /etc/ssh/sshd_config
+## 20230723-1149 JGRIM
+
+DenyGroups _nossh
